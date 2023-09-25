@@ -1,0 +1,35 @@
+{% extends "AppPietra/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+Bienvenido!
+
+{% endblock %}
+
+{% block bienvenida %}
+
+Esta es una pagina de compras.
+
+{% endblock %}
+
+{% block formulario %}
+
+<form action="/AppPietra/results/" method="GET">
+    <input type="text" name="articulo" id="articulo">
+
+    <input type="submit" value="Buscar">
+</form>
+{% if color %}
+        <p>Contamos con stock de:</p>
+        <p>
+            {% for purchase in color %}
+                <li>{{ purchase.obj }} de color {{ purchase.color }}</li>
+            {% endfor %}
+        </p>
+    {% else %}
+        <p>No se encontraron resultados para {{ articulo }}.</p>
+    {% endif %}
+
+{% endblock %}

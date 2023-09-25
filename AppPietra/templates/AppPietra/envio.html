@@ -1,0 +1,29 @@
+{% extends "AppPietra/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+Facilita el envio!
+
+{% endblock %}
+
+{% block bienvenida %}
+
+Ingresa los datos de tu domicilio y ahorra tiempo en tus compras.
+
+{% endblock %}
+
+{% block formulario2 %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+        {{form_l.as_table}}
+    </table>
+
+    <input type="submit" value="Confirmar">
+
+</form>
+
+{% endblock %}

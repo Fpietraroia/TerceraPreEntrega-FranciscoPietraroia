@@ -1,0 +1,29 @@
+{% extends "AppPietra/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+No encontras el producto que buscabas?
+
+{% endblock %}
+
+{% block bienvenida %}
+
+Hace la peticion de un producto! Tenemos inclusion inmediata!
+
+{% endblock %}
+
+{% block formulario2 %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+        {{form_w.as_table}}
+    </table>
+
+    <input type="submit" value="Confirmar">
+
+</form>
+
+{% endblock %}
